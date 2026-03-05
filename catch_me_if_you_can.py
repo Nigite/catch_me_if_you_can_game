@@ -128,7 +128,7 @@ class CatchMeGame:
         )
         
         self.catch_button.config(
-            text="Click Me!", 
+            text="Catch Me!", 
             font=("Arial", 14, "bold"),
             bg="lightblue",
             command=self._on_button_click
