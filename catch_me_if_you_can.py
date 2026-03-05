@@ -19,10 +19,10 @@ class CatchMeGame:
         self.max_level = 5
         self.trigger_distances = {
             1: 50,
-            2: 90,
-            3: 140,
-            4: 190,
-            5: 250
+            2: 75,
+            3: 90,
+            4: 135,
+            5: 190
         }
         
         self._setup_ui()
