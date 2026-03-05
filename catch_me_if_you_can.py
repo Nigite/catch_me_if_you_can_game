@@ -91,7 +91,7 @@ class CatchMeGame:
         if self.current_level < self.max_level:
             self.current_level += 1
             self.level_label.config(text=f"Level: {self.current_level} / {self.max_level}")
-            new_font_size = max(6, 24 - (self.current_level * 2))
+            new_font_size = max(6, 20 - (self.current_level * 2))
             
             self.catch_button.config(
                 text=f"Catch me! Lvl {self.current_level}!", 
