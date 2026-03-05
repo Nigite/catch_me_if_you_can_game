@@ -39,7 +39,7 @@ class CatchMeGame:
         self.level_label.pack(pady=10)
         self.catch_button = tk.Button(
             self.root, 
-            text="Click Me!", 
+            text="Catch Me!", 
             font=("Arial", 14, "bold"),
             bg="lightblue",
             command=self._on_button_click
@@ -110,13 +110,32 @@ class CatchMeGame:
         self.level_label.config(text="IMPOSSIBLE! YOU BEAT LEVEL 5!", fg="green")
         
         self.catch_button.config(
-            text="GG", 
+            text="Play Again?", 
             font=("Arial", 16, "bold"),
             bg="lightgreen", 
-            state=tk.DISABLED
+            command=self._restart_game
         )
         
-        self.catch_button.place(x=270, y=200)
+        self.catch_button.place(x=230, y=200)
+
+    def _restart_game(self):
+        """Resets all UI and state variables back to Level 1."""
+        self.current_level = 1
+        
+        self.level_label.config(
+            text=f"Level: {self.current_level} / {self.max_level}", 
+            fg="black"
+        )
+        
+        self.catch_button.config(
+            text="Click Me!", 
+            font=("Arial", 14, "bold"),
+            bg="lightblue",
+            command=self._on_button_click
+        )
+        
+        self.root.update_idletasks()
+        self.catch_button.place(x=250, y=200)
 
 if __name__ == "__main__":
     main_window = tk.Tk()
